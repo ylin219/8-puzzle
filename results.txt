@@ -1,0 +1,105 @@
+name: Yiran Lin
+Email: ylin219@bu.edu
+
+puzzles with 5-move optimal solutions
+-------------------------------------
+algorithm                num. solved    avg. moves    avg. states tested
+------------------------------------------------------------------------
+random                       10          5.0            332.5
+BFS                          10          5.0            47.1
+DFS (depth limit 20)         10          16.2           19072.7
+DFS (depth limit 50)         7           48.1           30269.3
+Greedy Search (using h1)     10          5.4            70.4
+A* (using h1)                10          5.0            6.7
+
+
+puzzles with 10-move optimal solutions
+-------------------------------------
+algorithm                num. solved    avg. moves    avg. states tested
+------------------------------------------------------------------------
+random                      9            13.3            2625.6
+BFS                         10           10.0            747.4
+DFS (depth limit 20)        10           18.8            24858.0
+DFS (depth limit 50)        4            50.0            22195.3
+Greedy Search (using h1)    10           77.8            1470.4 
+A* (using h1)               10           10.0            30.2
+
+
+puzzles with 15-move optimal solutions
+-------------------------------------
+algorithm                num. solved    avg. moves    avg. states tested
+------------------------------------------------------------------------
+random                      2            16.0             7012.0
+BFS                         10           15.0             12672.0
+DFS (depth limit 20)        5            18.6             27959.8
+DFS (depth limit 50)        5            48.6             8062.2
+Greedy Search (using h1)    8            79.5             2292.3
+A* (using h1)               10           15.0             347.7
+
+reflection: based on these three trials, DFS is the least efficient method to
+            find a solution, and A* is the most efficient method. The easier
+            the puzzle is, the more number of solved puzzle. Random, BFS and A*
+            give the most reliable optimal results. 
+
+
+heuristic h2
+------------
+This heuristic calculate the Manhattan distances of every tile to its goal position,
+Since, this heuristic function has output always less than the cost of the optimal
+path to a goal position, this heuristic function is optimistic.
+
+
+
+puzzles with 18-move optimal solutions
+--------------------------------------
+algorithm              num. solved    avg. moves    avg. states tested
+----------------------------------------------------------------------
+Greedy (heuristic h1)      5             118.8             843.2
+Greedy (heuristic h2)      10            116.2             450.0
+# Greedy with any other heuristics
+
+A* (heuristic h1)          10            18.0              1861.7
+A* (heuristic h2)          10            18.0              359.9
+# Greedy with any other heuristics
+
+
+puzzles with 21-move optimal solutions
+--------------------------------------
+algorithm              num. solved    avg. moves    avg. states tested
+----------------------------------------------------------------------
+Greedy (heuristic h1)      7             130.4              498.1
+Greedy (heuristic h2)      10            104.0              379.9
+# Greedy with any other heuristics
+
+A* (heuristic h1)          10            21.0               7728.5
+A* (heuristic h2)          10            21.0               906.3
+# Greedy with any other heuristics
+
+
+puzzles with 24-move optimal solutions
+--------------------------------------
+algorithm              num. solved    avg. moves    avg. states tested
+----------------------------------------------------------------------
+Greedy (heuristic h1)      5              110.0               750.6
+Greedy (heuristic h2)      10             110.0               403.8
+# Greedy with any other heuristics
+
+A* (heuristic h1)          0              0.0                 0.0
+A* (heuristic h2)          10             24.0                2493.0
+# Greedy with any other heuristics
+
+
+puzzles with 27-move optimal solutions
+--------------------------------------
+algorithm              num. solved    avg. moves    avg. states tested
+----------------------------------------------------------------------
+Greedy (heuristic h1)     9               164.3               1297.8
+Greedy (heuristic h2)     10              115.8               418.8
+# Greedy with any other heuristics
+
+A* (heuristic h1)         0               0.0                 0.0
+A* (heuristic h2)         8               27.0                10713.25            
+# Greedy with any other heuristics
+
+Reflection: heuristic h2 perform better than h1. Besides the 27-move puzzle, h2 is able to
+solve all of the puzzles within 20 seconds. For all the A* method, h2 has optimal moves. In general, h2 takes less moves (for Greedy), and takes less states to test. Therefore, h2 is more efficient for many reasons.
